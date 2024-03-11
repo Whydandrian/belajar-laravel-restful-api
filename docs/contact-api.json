@@ -88,8 +88,71 @@
           {
             "name": "Authorization",
             "in": "header"
+          },
+          {
+            "name": "name",
+            "in": "query"
+          },
+          {
+            "name": "email",
+            "in": "query"
+          },
+          {
+            "name": "phone",
+            "in": "query"
+          },
+          {
+            "name": "size",
+            "in": "query"
+          },
+          {
+            "name": "page",
+            "in": "query"
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "Success Search Contact",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "first_name": {
+                            "type": "string"
+                          },
+                          "last_name": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "phone": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "errors": {
+                      "type": "object"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/contacts/{id}": {
