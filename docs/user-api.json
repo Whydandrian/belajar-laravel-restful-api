@@ -1,0 +1,68 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "User API",
+    "description": "User API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.server.test/v1"
+    }
+  ],
+  "paths": {
+    "/api/users": {
+      "post": {
+        "description": "This route for register new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "wahyudi": {
+                  "description": "Example register new user",
+                  "value": {
+                    "username": "wahyudi",
+                    "password": "rahasia",
+                    "name": "Wahyudi Andrian"
+                  }
+                }
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/login": {
+      "post": {
+        "description": "This route for user login"
+      }
+    },
+    "/api/users/current": {
+      "get": {
+        "description": "This route for get current User"
+      },
+      "patch": {
+        "description": "This route for Update current User"
+      }
+    },
+    "/api/users/logout": {
+      "post": {
+        "description": "This route for logout current user"
+      }
+    },
+  }
+}
