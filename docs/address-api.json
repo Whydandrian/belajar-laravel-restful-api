@@ -13,7 +13,17 @@
   "paths": {
     "/api/contacts/{idContact}/addresses": {
       "post": {
-        "description": "Create New Address"
+        "description": "Create New Address",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header"
+          },
+          {
+            "name": "idContact",
+            "in": "path"
+          }
+        ]
       },
       "get": {
         "description": "Get List Address User"
