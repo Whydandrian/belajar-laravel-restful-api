@@ -16,6 +16,6 @@ class Contact extends Model
 
    public function users(): BelongsTo
    {
-      $this->belongsTo(Contact::class, "user_id", "id");
+      return $this->belongsTo(Contact::class, "user_id", "id");
    }
 }
