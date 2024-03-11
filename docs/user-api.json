@@ -30,7 +30,9 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "name", "password", "username"
+                  "name",
+                  "password",
+                  "username"
                 ],
                 "properties": {
                   "username": {
@@ -41,6 +43,49 @@
                   },
                   "name": {
                     "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "This responses for register user success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": {
+                    "description": "Success register User.",
+                    "value": {
+                      "data": {
+                        "id": 1,
+                        "name": "Wahyudi Andrian",
+                        "username": "wahyudi"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "username": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "errors": {
+                      "type": "object"
+                    }
                   }
                 }
               }
@@ -66,6 +111,6 @@
       "post": {
         "description": "This route for logout current user"
       }
-    },
+    }
   }
 }
