@@ -233,7 +233,7 @@
                   "name": {
                     "type": "string"
                   },
-                  "password":{
+                  "password": {
                     "type": "string"
                   }
                 }
@@ -275,8 +275,34 @@
       }
     },
     "/api/users/logout": {
-      "post": {
-        "description": "This route for logout current user"
+      "delete": {
+        "description": "This route for logout current user",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Logout current user success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "boolean"
+                    },
+                    "errors": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
