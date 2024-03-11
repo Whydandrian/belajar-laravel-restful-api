@@ -253,7 +253,27 @@
             "name": "idAddress",
             "in": "path"
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "Success delete address",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "boolean"
+                    },
+                    "errors": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
