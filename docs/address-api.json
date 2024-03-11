@@ -114,7 +114,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Success get address",
             "content": {
               "application/json": {
@@ -198,7 +198,7 @@
           }
         },
         "responses": {
-          "201": {
+          "200": {
             "description": "Success Update address",
             "content": {
               "application/json": {
