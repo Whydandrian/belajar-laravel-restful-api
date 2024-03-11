@@ -50,6 +50,30 @@
           }
         },
         "responses": {
+          "400": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "validationerror": {
+                    "description": "Validation error while register user",
+                    "value": {
+                      "errors": {
+                        "username": [
+                          "Username not be blank.",
+                          "Username must be 6 Character."
+                        ],
+                        "name": [
+                          "Name not be blank.",
+                          "Name min 5 Character."
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
           "201": {
             "description": "This responses for register user success.",
             "content": {
