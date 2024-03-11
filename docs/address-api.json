@@ -10,5 +10,25 @@
       "url": "http://localhost:8000"
     }
   ],
-  "paths": {}
+  "paths": {
+    "/api/contacts/{idContact}/addresses": {
+      "post": {
+        "description": "Create New Address"
+      },
+      "get": {
+        "description": "Get List Address User"
+      }
+    },
+    "/api/contacts/{idContact}/addresses/{idAddress}": {
+      "get": {
+        "description": "Get Address User"
+      },
+      "put": {
+        "description": "Update Address Current Contact User"
+      },
+      "delete": {
+        "description": "Delete Address"
+      }
+    }
+  }
 }
