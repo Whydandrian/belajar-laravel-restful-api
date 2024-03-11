@@ -98,13 +98,55 @@
     },
     "/api/contacts/{idContact}/addresses/{idAddress}": {
       "get": {
-        "description": "Get Address User"
+        "description": "Get Address User",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header"
+          },
+          {
+            "name": "idContact",
+            "in": "path"
+          },
+          {
+            "name": "idAddress",
+            "in": "path"
+          }
+        ]
       },
       "put": {
-        "description": "Update Address Current Contact User"
+        "description": "Update Address Current Contact User",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header"
+          },
+          {
+            "name": "idContact",
+            "in": "path"
+          },
+          {
+            "name": "idAddress",
+            "in": "path"
+          }
+        ]
       },
       "delete": {
-        "description": "Delete Address"
+        "description": "Delete Address",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header"
+          },
+          {
+            "name": "idContact",
+            "in": "path"
+          },
+          {
+            "name": "idAddress",
+            "in": "path"
+          }
+        ]
       }
     }
   }
