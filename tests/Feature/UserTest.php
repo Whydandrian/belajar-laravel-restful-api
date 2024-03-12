@@ -26,6 +26,25 @@ class UserTest extends TestCase
 
    public function testRegisterFailed()
    {
+      $this->post('/api/users', [
+         "username" => "",
+         "password" => "",
+         "name" => ""
+      ])
+         ->assertStatus(400)
+         ->assertJson([
+            "errors" => [
+               "username" => [
+                  "The username field is required."
+               ],
+               "password" => [
+                  "The password field is required."
+               ],
+               "name" => [
+                  "The name field is required."
+               ]
+            ]
+         ]);
    }
 
    public function testRegisterUsernameAlreadyExists()
