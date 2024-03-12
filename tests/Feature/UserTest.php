@@ -98,4 +98,19 @@ class UserTest extends TestCase
             ]
          ]);
    }
+
+   public function testLoginFailedPasswordWrong()
+   {
+      $this->seed([UserSeeder::class]);
+      $this->post('/api/users/login', [
+         "username" => "test",
+         "password" => "salah"
+      ])
+         ->assertStatus(401)
+         ->assertJson([
+            "errors" => [
+               "message" => ["username or password wrong"]
+            ]
+         ]);
+   }
 }
