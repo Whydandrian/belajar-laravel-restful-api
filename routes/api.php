@@ -29,3 +29,4 @@ use Illuminate\Support\Facades\Route;
 //    Route::get("/users/current", [UserController::class, 'get']);
 // });
 Route::post('/users', [UserController::class, 'register']);
+Route::post('/users/login', [UserController::class, 'login']);
