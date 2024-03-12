@@ -79,13 +79,23 @@ class UserTest extends TestCase
          ->assertJson([
             "data" => [
                "username" => "test",
-               "password" => "test"
+               "name" => "test"
             ]
          ]);
       $user = User::where("username", "test")->first();
       self::assertNotNull($user->token);
    }
-   public function testLoginFailed()
+   public function testLoginFailedUserNotFound()
    {
+      $this->post('/api/users/login', [
+         "username" => "test",
+         "password" => "test"
+      ])
+         ->assertStatus(401)
+         ->assertJson([
+            "errors" => [
+               "message" => ["username or password wrong"]
+            ]
+         ]);
    }
 }
