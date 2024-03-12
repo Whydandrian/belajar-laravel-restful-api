@@ -65,4 +65,11 @@ class UserTest extends TestCase
             ]
          ]);
    }
+
+   public function testLoginSuccess()
+   {
+   }
+   public function testLoginFailed()
+   {
+   }
 }
