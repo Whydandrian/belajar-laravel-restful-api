@@ -26,25 +26,31 @@ class User extends Model implements Authenticatable
 
    public function getAuthIdentifierName()
    {
+      return "username";
    }
 
 
    public function getAuthIdentifier()
    {
+      return $this->username;
    }
 
    public function getAuthPassword()
    {
+      return $this->password;
    }
 
    public function getRememberToken()
    {
+      return $this->token;
    }
 
    public function setRememberToken($value)
    {
+      $this->token = $value;
    }
    public function getRememberTokenName()
    {
+      return "token";
    }
 }
