@@ -113,4 +113,14 @@ class UserTest extends TestCase
             ]
          ]);
    }
+
+   public function testGetSuccess()
+   {
+   }
+   public function testGetUnauthorized()
+   {
+   }
+   public function testGetInvalidToken()
+   {
+   }
 }
