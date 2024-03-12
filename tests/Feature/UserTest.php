@@ -49,5 +49,20 @@ class UserTest extends TestCase
 
    public function testRegisterUsernameAlreadyExists()
    {
+      $this->testRegisterSuccess();
+
+      $this->post('/api/users', [
+         "username" => "whydandrian",
+         "password" => "rahasia",
+         "name" => "Wahyudi Andrian"
+      ])
+         ->assertStatus(400)
+         ->assertJson([
+            "errors" => [
+               "username" => [
+                  "username already registered"
+               ]
+            ]
+         ]);
    }
 }
