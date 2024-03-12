@@ -8,13 +8,27 @@ use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
-    {
-        $response = $this->get('/');
+   public function testRegisterSuccess()
+   {
+      $this->post('/api/users', [
+         "username" => "whydandrian",
+         "password" => "rahasia",
+         "name" => "Wahyudi Andrian"
+      ])
+         ->assertStatus(201)
+         ->assertJson([
+            "data" => [
+               "username" => "whydandrian",
+               "name" => "Wahyudi Andrian"
+            ]
+         ]);
+   }
 
-        $response->assertStatus(200);
-    }
+   public function testRegisterFailed()
+   {
+   }
+
+   public function testRegisterUsernameAlreadyExists()
+   {
+   }
 }
