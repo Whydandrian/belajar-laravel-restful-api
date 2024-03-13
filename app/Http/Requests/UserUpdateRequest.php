@@ -13,8 +13,6 @@ class UserUpdateRequest extends FormRequest
     */
    public function authorize(): bool
    {
-      // User bisa melakukan update jika user yang login tidak sama dengan null
-      // atau jika sistem mendeteksi adanya user
       return $this->user() != null;
    }
 
